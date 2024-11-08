@@ -1,21 +1,59 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* globals.css */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-color: #000; /* Remplacez #000 par la couleur de fond souhaitée */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Appliquer le box-sizing correct à tous les éléments */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Assurer que tout élément dans le body ne génère pas de marges inattendues */
+body > * {
+  margin: 0;
+}
+
+/* Styles généraux pour les éléments de mise en page */
+header, footer, main {
+  margin: 0;
+  padding: 0;
+}
+
+/* Assurer que le body s'étend sur toute la hauteur de la page et configure une structure de base */
+
+
+/* Conteneur principal pour l'application */
+main {
+  flex: 1; /* Prend tout l'espace disponible */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Exemple de styles pour le nav (ajoutez vos propres styles ici) */
+nav {
+  background-color: #333; /* Couleur de fond de la barre de navigation */
+  padding: 1rem; /* Espacement interne */
+  color: white; /* Couleur du texte */
+  text-align: center; /* Centrer le texte */
+  width: 100%; /* Prendre toute la largeur */
+}
+
+/* Footer de base (à personnaliser selon vos besoins) */
+footer {
+  background-color: #222; /* Couleur de fond du footer */
+  color: #bbb; /* Couleur du texte du footer */
+  padding: 1rem; /* Espacement interne */
+  text-align: center; /* Centrer le texte */
+  width: 100%; /* Prendre toute la largeur */
 }
