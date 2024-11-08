@@ -3,6 +3,13 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './portfolio.module.css';
 
+type BubbleKey = 'portfolio' | 'we' | 'react' | 'js' | 'pokedex';
+
+type Bubble = {
+  name: string;
+  subBubbles?: BubbleKey[];
+  link?: string;
+}
 
 const Portfolio = () => {
   const [activeBubble, setActiveBubble] = useState<BubbleKey | null>(null);
