@@ -52,7 +52,7 @@ const Portfolio = () => {
           >
             {bubbles.portfolio.name}
           </motion.div>
-          <h1>Clique sur moi</h1> {/* Affiché uniquement si aucune bulle n'est active */}
+          <h1>Cliquez pour parcourir</h1> {/* Affiché uniquement si aucune bulle n'est active */}
         </>
       )}
 
