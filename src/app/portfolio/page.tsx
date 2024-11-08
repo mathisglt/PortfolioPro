@@ -3,22 +3,13 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './portfolio.module.css';
 
-type BubbleKey = 'portfolio' | 'we' | 'acf' | 'cse' | 'react' | 'js' | 'pokedex';
-
-interface Bubble {
-  name: string;
-  subBubbles?: BubbleKey[];
-  link?: string;
-}
 
 const Portfolio = () => {
   const [activeBubble, setActiveBubble] = useState<BubbleKey | null>(null);
 
   const bubbles: Record<BubbleKey, Bubble> = {
-    portfolio: { name: 'Portfolio', subBubbles: ['we', 'acf', 'cse'] },
+    portfolio: { name: 'Portfolio', subBubbles: ['we'] },
     we: { name: 'WE', subBubbles: ['react', 'js', 'pokedex'] },
-    acf: { name: 'ACF' },
-    cse: { name: 'CSE' },
     react: { name: 'React', link: 'https://wetpreact.amadev.fr' },
     js: { name: 'JS', link: 'https://wejs.amadev.fr' },
     pokedex: { name: 'Pokedex', link: 'https://pokedex.amadev.fr' },
@@ -43,16 +34,19 @@ const Portfolio = () => {
     <div className={styles.mainContent}>
       {/* Affichage de la bulle principale */}
       {!activeBubble && (
-        <motion.div
-          className={styles.bubble}
-          onClick={() => handleBubbleClick('portfolio')}
-          variants={explosionVariants}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-        >
-          {bubbles.portfolio.name}
-        </motion.div>
+        <>
+          <motion.div
+            className={styles.bubble}
+            onClick={() => handleBubbleClick('portfolio')}
+            variants={explosionVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+          >
+            {bubbles.portfolio.name}
+          </motion.div>
+          <h1>Clique sur moi</h1> {/* Affiché uniquement si aucune bulle n'est active */}
+        </>
       )}
 
       {/* Affichage des sous-bulles pour "Portfolio" */}

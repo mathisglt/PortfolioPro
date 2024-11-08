@@ -1,4 +1,3 @@
-// app/layout.tsx
 import './globals.css';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
@@ -27,7 +26,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <Link href="/portfolio" className={styles.lien}>Portfolio</Link>
             </li>
             <li>
-              <Link href="/about" className={styles.lien}>About Me</Link>
+              <Link href="/about" className={styles.lien}>À propos</Link>
             </li>
           </ul>
         </nav>
