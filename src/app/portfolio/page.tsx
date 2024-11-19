@@ -3,23 +3,25 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './portfolio.module.css';
 
-type BubbleKey = 'portfolio' | 'we' | 'react' | 'js' | 'pokedex';
+type BubbleKey = 'portfolio' | 'we' | 'react' | 'js' | 'pokedex' | 'perso' | 'amagg';
 
 type Bubble = {
   name: string;
   subBubbles?: BubbleKey[];
   link?: string;
-}
+};
 
 const Portfolio = () => {
   const [activeBubble, setActiveBubble] = useState<BubbleKey | null>(null);
 
   const bubbles: Record<BubbleKey, Bubble> = {
-    portfolio: { name: 'Portfolio', subBubbles: ['we'] },
-    we: { name: 'WE', subBubbles: ['react', 'js', 'pokedex'] },
+    portfolio: { name: 'Portfolio', subBubbles: ['we', 'perso'] },
+    we: { name: 'Web Engineering', subBubbles: ['react', 'js', 'pokedex'] },
     react: { name: 'React', link: 'https://wetpreact.amadev.fr' },
     js: { name: 'JS', link: 'https://wejs.amadev.fr' },
     pokedex: { name: 'Pokedex', link: 'https://pokedex.amadev.fr' },
+    perso: { name: 'Projets Persos', subBubbles: ['amagg'] },
+    amagg: { name: 'Ama.gg', link: 'https://amagg.mathisgaultier.fr' },
   };
 
   const explosionVariants = {
@@ -37,9 +39,30 @@ const Portfolio = () => {
     }
   };
 
+  const renderSubBubbles = (bubbleKey: BubbleKey) => {
+    const bubble = bubbles[bubbleKey];
+    return (
+      <div className={styles.bubblesContainer}>
+        {bubble.subBubbles?.map((subBubble) => (
+          <motion.div
+            key={subBubble}
+            className={styles.subBubble}
+            onClick={() => handleBubbleClick(subBubble)}
+            variants={explosionVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+          >
+            {bubbles[subBubble]?.name}
+          </motion.div>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <div className={styles.mainContent}>
-      {/* Affichage de la bulle principale */}
+      {/* Main Bubble Display */}
       {!activeBubble && (
         <>
           <motion.div
@@ -52,49 +75,14 @@ const Portfolio = () => {
           >
             {bubbles.portfolio.name}
           </motion.div>
-          <h1>Cliquez pour parcourir</h1> {/* Affiché uniquement si aucune bulle n'est active */}
+          <h1>Cliquez pour parcourir</h1>
         </>
       )}
 
-      {/* Affichage des sous-bulles pour "Portfolio" */}
-      {activeBubble === 'portfolio' && (
-        <div className={styles.bubblesContainer}>
-          {bubbles.portfolio.subBubbles?.map((subBubble) => (
-            <motion.div
-              key={subBubble}
-              className={styles.subBubble}
-              onClick={() => handleBubbleClick(subBubble as BubbleKey)}
-              variants={explosionVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-            >
-              {bubbles[subBubble]?.name}
-            </motion.div>
-          ))}
-        </div>
-      )}
+      {/* Sub-Bubbles Display */}
+      {activeBubble && renderSubBubbles(activeBubble)}
 
-      {/* Affichage des sous-bulles pour "WE" */}
-      {activeBubble === 'we' && (
-        <div className={styles.bubblesContainer}>
-          {bubbles.we.subBubbles?.map((subBubble) => (
-            <motion.div
-              key={subBubble}
-              className={styles.subBubble}
-              onClick={() => handleBubbleClick(subBubble as BubbleKey)}
-              variants={explosionVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-            >
-              {bubbles[subBubble]?.name}
-            </motion.div>
-          ))}
-        </div>
-      )}
-
-      {/* Bouton de retour */}
+      {/* Back Button */}
       {activeBubble && (
         <motion.div
           className={styles.backButton}

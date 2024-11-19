@@ -60,8 +60,8 @@
   font-size: 1.5rem;
   text-align: center;
   border-radius: 50%; /* Pour des sous-bulles circulaires */
-  width: 120px;
-  height: 120px;
+  width: 175px;
+  height: 175px;
   display: flex;
   justify-content: center;
   align-items: center;
