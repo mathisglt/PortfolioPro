@@ -5,19 +5,14 @@ import styles from './index.module.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata = {
-  title: 'Mon Portfolio',
-  description: 'Portfolio de Gaultier Mathis',
-};
-
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="fr">
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Mon Portfolio</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Portfolio</title>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className={inter.className}>
         <nav className={styles.navbar}>
