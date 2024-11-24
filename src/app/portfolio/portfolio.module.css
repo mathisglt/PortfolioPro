@@ -1,38 +1,34 @@
-/* portfolio.module.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
-/* Conteneur principal pour s'assurer qu'il prend tout l'espace disponible */
 .mainContent {
-  flex: 1; /* S'assure que le composant prend tout l'espace restant */
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  width: 100%; /* Prend toute la largeur disponible */
-  margin: auto; /* Centre horizontalement le contenu */
+  width: 100%; 
+  margin: auto; 
   background-color: #121212;
-  overflow: hidden; /* Pour que les bulles ne débordent pas */
+  overflow: hidden;
 }
 
-
-/* Conteneur pour organiser les bulles horizontalement */
 .bubblesContainer {
   display: flex;
-  gap: 1rem; /* Espacement horizontal entre les bulles */
-  margin-top: 1.5rem; /* Espacement au-dessus des bulles */
+  gap: 1rem; 
+  margin-top: 1.5rem; 
 }
 
 .bubble {
-  font-family: 'Poppins', sans-serif; /* Police moderne */
-  font-weight: 700; /* Gras pour rendre le texte bien visible */
-  background: linear-gradient(135deg, #ff9a8b, #ffb5e2, #fff0b3, #ff9a8b); /* Nouveau dégradé avec des tons chauds (rose, jaune, crémeux) */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700; 
+  background: linear-gradient(135deg, #ff9a8b, #ffb5e2, #fff0b3, #ff9a8b); 
   border: none;
   color: #333;
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
-  border-radius: 50%; /* Pour un effet de bulle circulaire */
+  border-radius: 50%; 
   width: 150px;
   height: 150px;
   display: flex;
@@ -40,26 +36,24 @@
   align-items: center;
   cursor: pointer;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-  animation: float 6s ease-in-out infinite, gradientShift 6s ease infinite; /* Animation de dégradé */
-  background-size: 300% 300%; /* Agrandit la zone du dégradé pour éviter les lignes visibles */
-  transition: transform 0.3s ease; /* Transition fluide pour l'agrandissement au survol */
+  animation: float 6s ease-in-out infinite, gradientShift 6s ease infinite; 
+  background-size: 300% 300%;
+  transition: transform 0.3s ease;
 }
 
-/* Agrandissement au survol */
 .bubble:hover {
-  transform: scale(1.2); /* Agrandissement léger et fluide */
+  transform: scale(1.2);
 }
 
-/* Styles pour les sous-bulles */
 .subBubble {
-  font-family: 'Poppins', sans-serif; /* Police moderne */
-  font-weight: 700; /* Gras pour rendre le texte bien visible */
-  background: linear-gradient(135deg, #ff9a8b, #ffb5e2, #fff0b3, #ff9a8b); /* Même dégradé que pour .bubble */
+  font-family: 'Poppins', sans-serif; 
+  font-weight: 700; 
+  background: linear-gradient(135deg, #ff9a8b, #ffb5e2, #fff0b3, #ff9a8b); 
   border: none;
   color: #333;
   font-size: 1.5rem;
   text-align: center;
-  border-radius: 50%; /* Pour des sous-bulles circulaires */
+  border-radius: 50%;
   width: 175px;
   height: 175px;
   display: flex;
@@ -67,16 +61,15 @@
   align-items: center;
   cursor: pointer;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  animation: float 6s ease-in-out infinite, gradientShift 6s ease infinite; /* Animation de dégradé */
-  background-size: 300% 300%; /* Agrandit la zone du dégradé pour éviter les lignes visibles */
-  transition: transform 0.3s ease; /* Transition fluide pour l'agrandissement au survol */
+  animation: float 6s ease-in-out infinite, gradientShift 6s ease infinite; 
+  background-size: 300% 300%; 
+  transition: transform 0.3s ease; 
 }
 
 .subBubble:hover {
-  transform: scale(1.1); /* Agrandissement léger et fluide au survol */
+  transform: scale(1.1); 
 }
 
-/* Bouton de retour */
 .backButton {
   background-color: #333;
   color: #fff;
@@ -87,15 +80,15 @@
   border-radius: 8px;
   cursor: pointer;
   margin-top: 20px;
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition fluide */
+  transition: background-color 0.3s ease, transform 0.3s ease; 
 }
 
 .backButton:hover {
-  background-color: #555; /* Changement de couleur de fond au survol */
-  transform: translateY(-2px); /* Déplacement léger pour un effet de clic */
+  background-color: #555; 
+  transform: translateY(-2px);
 }
 
-/* Effet de flottement infini */
+
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
@@ -104,7 +97,7 @@
     transform: translateY(-10px);
   }
 }
-/* Dégradé animé pour un effet infini */
+
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;

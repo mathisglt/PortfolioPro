@@ -1,11 +1,13 @@
 // app/page.tsx
 import styles from './index.module.css';
+import Portfolio from './portfolio/page';
 
 const HomePage = () => {
   return (
-    <div className={styles.mainbodycontainer}>
-      <h1>Bienvenue sur mon Portfolio</h1>
-    </div>
+    <>
+    <Portfolio></Portfolio>
+    </>
+    
   );
 };
 
