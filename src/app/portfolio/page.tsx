@@ -17,7 +17,7 @@ const Portfolio = () => {
   const bubbles: Record<BubbleKey, Bubble> = {
     portfolio: { name: 'Portfolio', subBubbles: ['we', 'perso'] },
     we: { name: 'Web Engineering \n Master 1', subBubbles: ['react', 'js', 'pokedex'] },
-    react: { name: 'React', link: 'https://wetpreact.amadev.fr' },
+    react: { name: 'Bibliothèque \n (React)', link: 'https://wetpreact.amadev.fr' },
     js: { name: 'Dessin \n (JavaScript pur)', link: 'https://wejs.amadev.fr' },
     pokedex: { name: 'Pokedex \n (Angular)', link: 'https://pokedex.amadev.fr' },
     perso: { name: 'Projets Persos', subBubbles: ['amagg'] },
