@@ -9,7 +9,7 @@
 
 .navbar {
   position: relative;
-  background-color: rgba(30, 30, 30, 0.95);
+  background: linear-gradient(to right, rgba(30, 30, 30, 0.95), rgba(22, 21, 21, 0.95));
   padding: 1rem 3rem;
   display: flex;
   justify-content: center;
@@ -113,7 +113,7 @@
 }
 
 .footer {
-  background: linear-gradient(to right, #333, #444);
+  background: linear-gradient(to right, rgba(30, 30, 30, 0.95), rgba(22, 21, 21, 0.95));
   color: #aaa;
   text-align: center;
   padding: 2rem;
