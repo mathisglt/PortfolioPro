@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './portfolio.module.css';
 
-type BubbleKey = 'portfolio' | 'we' | 'react' | 'js' | 'pokedex' | 'perso' | 'amagg';
+type BubbleKey = 'portfolio' | 'we' | 'react' | 'js' | 'pokedex' | 'perso' | 'amagg' | 'bingo';
 
 type Bubble = {
   name: string;
@@ -20,8 +20,9 @@ const Portfolio = () => {
     react: { name: 'Bibliothèque \n (React)', link: 'https://wetpreact.amadev.fr' },
     js: { name: 'Dessin \n (JavaScript pur)', link: 'https://wejs.amadev.fr' },
     pokedex: { name: 'Pokedex \n (Angular)', link: 'https://pokedex.amadev.fr' },
-    perso: { name: 'Projets Persos', subBubbles: ['amagg'] },
+    perso: { name: 'Projets Persos', subBubbles: ['amagg','bingo'] },
     amagg: { name: 'Ama.gg (Next.js)', link: 'https://amagg.mathisgaultier.fr' },
+    bingo: { name: 'BingoLive (Next.js)\n En cours'},
   };
 
   const explosionVariants = {
