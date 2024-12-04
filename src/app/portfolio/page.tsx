@@ -17,12 +17,12 @@ const Portfolio = () => {
   const bubbles: Record<BubbleKey, Bubble> = {
     portfolio: { name: 'Portfolio', subBubbles: ['we', 'perso'] },
     we: { name: 'Web Engineering \n Master 1', subBubbles: ['react', 'js', 'pokedex'] },
-    react: { name: 'Bibliothèque \n (React)', link: 'https://wetpreact.amadev.fr' },
-    js: { name: 'Dessin \n (JavaScript pur)', link: 'https://wejs.amadev.fr' },
+    react: { name: 'Ma Bibliothèque \n (React)', link: 'https://wetpreact.amadev.fr' },
+    js: { name: 'CanvArt \n (JavaScript pur)', link: 'https://wejs.amadev.fr' },
     pokedex: { name: 'Pokedex \n (Angular)', link: 'https://pokedex.amadev.fr' },
     perso: { name: 'Projets Persos', subBubbles: ['amagg','bingo'] },
     amagg: { name: 'Ama.gg (Next.js)', link: 'https://amagg.mathisgaultier.fr' },
-    bingo: { name: 'BingoLive (Next.js)\n En cours'},
+    bingo: { name: 'BingoLive (Next.js)\n En cours', subBubbles: ['amagg','bingo'] },
   };
 
   const explosionVariants = {
