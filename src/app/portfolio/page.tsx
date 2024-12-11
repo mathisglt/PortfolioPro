@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './portfolio.module.css';
 
-type BubbleKey = 'portfolio' | 'we' | 'react' | 'js' | 'pokedex' | 'perso' | 'amagg' | 'bingo';
+type BubbleKey = 'portfolio' | 'we' | 'react' | 'js' | 'pokedex' | 'perso' | 'amagg' | 'bingo'| 'todolist';
 
 type Bubble = {
   name: string;
@@ -16,12 +16,13 @@ const Portfolio = () => {
 
   const bubbles: Record<BubbleKey, Bubble> = {
     portfolio: { name: 'Portfolio', subBubbles: ['we', 'perso'] },
-    we: { name: 'Web Engineering \n Master 1', subBubbles: ['react', 'js', 'pokedex'] },
+    we: { name: 'Web Engineering \n Master 1', subBubbles: ['react', 'js', 'pokedex','todolist'] },
     react: { name: 'Ma Bibliothèque \n (React)', link: 'https://wetpreact.amadev.fr' },
     js: { name: 'CanvArt \n (JavaScript pur)', link: 'https://wejs.amadev.fr' },
     pokedex: { name: 'Pokedex \n (Angular)', link: 'https://pokedex.amadev.fr' },
     perso: { name: 'Projets Persos', subBubbles: ['amagg','bingo'] },
     amagg: { name: 'Ama.gg (Next.js)', link: 'https://amagg.mathisgaultier.fr' },
+    todolist: { name: 'ToDoList (Next.js)', link: 'https://todolist.amadev.fr' },
     bingo: { name: 'BingoLive (Next.js)\n En cours', subBubbles: ['amagg','bingo'] },
   };
 
