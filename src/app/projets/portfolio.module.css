@@ -9,7 +9,7 @@
   padding: 2rem;
   width: 100%; 
   margin: auto; 
-  background: #0a0a0a;
+  background: #121212;
   overflow: hidden;
 }
 
@@ -25,7 +25,7 @@
 .subBubble {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  background: #151515;
+  background: #111111;
   color: #fff;
   font-size: 1.5rem;
   text-align: center;
@@ -111,9 +111,11 @@
 .disabled:hover {
   transform: none;
   border-color: #ff6b00;
+  text-shadow: 0 0 8px rgba(255, 107, 0, 0.5);
   box-shadow: 
     0 0 10px rgba(255, 107, 0, 0.2),
     inset 0 0 10px rgba(255, 107, 0, 0.2);
+    
 }
 
 .disabled::before {

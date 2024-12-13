@@ -21,12 +21,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </Link>
           <ul className={styles.liens}>
             <li>
-              <Link href="/portfolio" className={styles.lien}>
+              <Link href="/projets" className={styles.lien}>
                 Projets
               </Link>
             </li>
             <li>
-              <Link href="/about" className={styles.lien}>
+              <Link href="/cv" className={styles.lien}>
                 CV
               </Link>
             </li>

@@ -1,0 +1,55 @@
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 2rem;
+  background: #121212;
+}
+
+.title {
+  font-size: 8rem;
+  font-weight: 700;
+  color: #00ff8c;
+  margin: 0;
+  text-shadow: 0 0 15px rgba(0, 255, 140, 0.5);
+}
+
+.subtitle {
+  font-size: 2rem;
+  color: #fff;
+  margin: 1rem 0;
+}
+
+.description {
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.homeButton {
+  background: transparent;
+  color: #00ff8c;
+  font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid #00ff8c;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  clip-path: polygon(
+    10% 0,
+    90% 0,
+    100% 30%,
+    100% 70%,
+    90% 100%,
+    10% 100%,
+    0 70%,
+    0 30%
+  );
+}
+
+.homeButton:hover {
+  background: rgba(0, 255, 140, 0.1);
+  box-shadow: 0 0 15px rgba(0, 255, 140, 0.3);
+} 
