@@ -4,12 +4,13 @@ import { motion } from 'framer-motion';
 import styles from './portfolio.module.css';
 
 type BubbleKey = 'portfolio' | 'we' | 'react' | 'js' | 'pokedex' | 'perso' | 'amagg' | 'bingo'| 'todolist'| 'nextfood';
-
+type Language = "Other" | "React" | "JavaScript" | "Angular" | "Vue.js" | "Next.js";
 type Bubble = {
   name: string;
   subBubbles?: BubbleKey[];
   link?: string;
   disabled?: boolean;
+  language?: Language;
 };
 
 const Portfolio = () => {
@@ -22,13 +23,13 @@ const Portfolio = () => {
     portfolio: { name: 'Portfolio', subBubbles: ['we', 'perso'] },
     we: { name: 'Web Engineering \n Master 1', subBubbles: ['react', 'js', 'pokedex','todolist'] },
     perso: { name: 'Projets Persos', subBubbles: ['amagg','bingo','nextfood'] },
-    react: { name: 'Ma Bibliothèque \n (React)', link: 'https://wetpreact.amadev.fr' },
-    js: { name: 'CanvArt \n (JavaScript pur)', link: 'https://wejs.amadev.fr' },
-    pokedex: { name: 'Pokedex \n (Angular)', link: 'https://pokedex.amadev.fr' },
-    todolist: { name: 'ToDoList (Next.js)', link: 'https://todolist.amadev.fr' },
-    bingo: { name: 'BingoLive (Next.js)\n En cours', disabled: true },
-    amagg: { name: 'Ama.gg (Next.js)', link: 'https://amagg.mathisgaultier.fr' },
-    nextfood: { name: 'NextFood (Next.js)', link: 'https://nextfood.mathisgaultier.fr/' },
+    react: { name: 'Ma Bibliothèque', link: 'https://wetpreact.amadev.fr',language:"React" },
+    js: { name: 'CanvArt ', link: 'https://wejs.amadev.fr',language:"JavaScript" },
+    pokedex: { name: 'Pokedex ', link: 'https://pokedex.amadev.fr',language:"Angular" },
+    todolist: { name: 'ToDoList', link: 'https://todolist.amadev.fr',language:"Vue.js" },
+    bingo: { name: 'BingoLive \n En cours', disabled: true,language:"Next.js" },
+    amagg: { name: 'Ama.gg ', link: 'https://amagg.mathisgaultier.fr',language:"Next.js" },
+    nextfood: { name: 'NextFood ', link: 'https://nextfood.mathisgaultier.fr/',language:"Next.js" },
   };
 
   const explosionVariants = {
@@ -43,7 +44,8 @@ const Portfolio = () => {
       y: 0,
       transition: {
         duration: 0.2,
-        ease: [0.4, 0, 0.2, 1]
+        ease: [0.4, 0, 0.2, 1],
+        scale: { duration: 0.2 }
       }
     },
     exit: { 
@@ -94,10 +96,18 @@ const Portfolio = () => {
             className={`${styles.subBubble} ${bubbles[subBubble].disabled ? styles.disabled : ''}`}
             onClick={() => !bubbles[subBubble].disabled && handleBubbleClick(subBubble)}
             variants={explosionVariants}
-            whileHover={!bubbles[subBubble].disabled ? { scale: 1.1 } : {}}
+            whileHover={!bubbles[subBubble].disabled ? { 
+              scale: 1.1,
+              transition: { delay: 0.2 }
+            } : {}}
             whileTap={!bubbles[subBubble].disabled ? { scale: 0.9 } : {}}
           >
             {bubbles[subBubble]?.name}
+            {bubbles[subBubble]?.language && (
+              <span className={`${styles.languageBadge} ${styles[bubbles[subBubble].language?.toLowerCase().replace('.', '')]}`}>
+                {bubbles[subBubble].language}
+              </span>
+            )}
           </motion.div>
         ))}
       </motion.div>

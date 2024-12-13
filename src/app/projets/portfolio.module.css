@@ -153,3 +153,64 @@
   background: rgba(0, 255, 140, 0.1);
   box-shadow: 0 0 15px rgba(0, 255, 140, 0.3);
 }
+
+.languageBadge {
+  position: absolute;
+  bottom: 10px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  clip-path: polygon(
+    5% 0,
+    95% 0,
+    100% 20%,
+    100% 80%,
+    95% 100%,
+    5% 100%,
+    0 80%,
+    0 20%
+  );
+}
+
+.react {
+  background: rgba(97, 218, 251, 0.2);
+  color: #61DAFB;
+  text-shadow: 0 0 8px rgba(97, 218, 251, 0.5);
+  border: 1px solid #61DAFB;
+}
+
+.javascript {
+  background: rgba(247, 223, 30, 0.2);
+  color: #F7DF1E;
+  text-shadow: 0 0 8px rgba(247, 223, 30, 0.5);
+  border: 1px solid #F7DF1E;
+}
+
+.nextjs {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  border: 1px solid #FFFFFF;
+}
+
+.angular {
+  background: rgba(221, 0, 49, 0.2);
+  color: #ff4444;
+  text-shadow: 0 0 8px rgba(255, 68, 68, 0.5);
+  border: 1px solid #ff4444;
+}
+
+.vuejs {
+  background: rgba(65, 184, 131, 0.2);
+  color: #41B883;
+  text-shadow: 0 0 8px rgba(65, 184, 131, 0.5);
+  border: 1px solid #41B883;
+}
+
+.other {
+  background: rgba(255, 107, 0, 0.2);
+  color: #ff6b00;
+  text-shadow: 0 0 8px rgba(255, 107, 0, 0.5);
+  border: 1px solid #ff6b00;
+}
