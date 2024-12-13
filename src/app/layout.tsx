@@ -16,15 +16,23 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       </head>
       <body className={inter.className}>
         <nav className={styles.navbar}>
+          <Link href="/" className={styles.logo}>
+            Gaultier Mathis
+          </Link>
           <ul className={styles.liens}>
             <li>
               <Link href="/portfolio" className={styles.lien}>
-                Portfolio
+                Projets
               </Link>
             </li>
             <li>
               <Link href="/about" className={styles.lien}>
-                À propos
+                CV
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className={styles.lien}>
+                Contact
               </Link>
             </li>
           </ul>
