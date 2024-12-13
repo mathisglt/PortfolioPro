@@ -2,47 +2,36 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: linear-gradient(to bottom, #1f1f1f, #121212);
+  background: #0a0a0a;
   color: #eaeaea;
   overflow-x: hidden;
 }
 
 .navbar {
-  position: relative;
-  background: linear-gradient(to right, rgba(30, 30, 30, 0.95), rgba(22, 21, 21, 0.95));
+  position: fixed;
+  background: #151515;
   padding: 1rem 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.3),
+    0 0 10px rgba(0, 255, 140, 0.2);
+  border-bottom: 2px solid #00ff8c;
   z-index: 10;
 }
 
 .navbar::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: -2px;
   left: 0;
   width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, #ff007f, #ff8c00, #40c4ff, #8e44ad, #ff007f);
-  background-size: 300%;
-  border-radius: 20px;
-  animation: neon-anim 4s ease-in-out infinite;
+  height: 2px;
+  background: #00ff8c;
+  box-shadow: 0 0 15px rgba(0, 255, 140, 0.5);
   z-index: -1;
-}
-
-@keyframes neon-anim {
-  0% {
-    background-position: 0%;
-  }
-  50% {
-    background-position: 50%;
-  }
-  100% {
-    background-position: 150%;
-  }
 }
 
 .liens {
@@ -59,12 +48,14 @@
   font-size: 1.1rem;
   font-weight: 600;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-shadow: 0 0 8px rgba(0, 255, 140, 0.3);
 }
 
 .lien:hover {
-  color: #ff8c00;
+  color: #00ff8c;
   transform: scale(1.1);
+  text-shadow: 0 0 12px rgba(0, 255, 140, 0.8);
 }
 
 .lien::after {
@@ -72,12 +63,13 @@
   position: absolute;
   width: 100%;
   height: 2px;
-  background-color: #ff8c00;
+  background-color: #00ff8c;
   bottom: -6px;
   left: 0;
   transform: scaleX(0);
   transform-origin: bottom right;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px rgba(0, 255, 140, 0.5);
 }
 
 .lien:hover::after {
@@ -93,12 +85,24 @@
   justify-content: center;
   padding: 3rem 2rem;
   text-align: center;
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  border-radius: 20px;
+  background: #151515;
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.3),
+    0 0 10px rgba(0, 255, 140, 0.1);
+  border: 2px solid #00ff8c;
+  clip-path: polygon(
+    0 5%,
+    5% 0,
+    95% 0,
+    100% 5%,
+    100% 95%,
+    95% 100%,
+    5% 100%,
+    0 95%
+  );
   max-width: 900px;
   margin: 2rem auto;
-  animation: fade-in 1s ease-in-out;
+  animation: fade-in 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes fade-in {
@@ -113,25 +117,29 @@
 }
 
 .footer {
-  background: linear-gradient(to right, rgba(30, 30, 30, 0.95), rgba(22, 21, 21, 0.95));
+  background: #151515;
   color: #aaa;
   text-align: center;
   padding: 2rem;
   font-size: 1.1rem;
-  border-radius: 25px 25px 0 0;
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 
+    0 -4px 10px rgba(0, 0, 0, 0.3),
+    0 0 10px rgba(0, 255, 140, 0.2);
+  border-top: 2px solid #00ff8c;
   margin-top: auto;
 }
 
 .footerLink {
-  color: #ff8c00;
+  color: #00ff8c;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease;
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-shadow: 0 0 8px rgba(0, 255, 140, 0.3);
 }
 
 .footerLink:hover {
-  color: #ff007f;
+  color: #fff;
+  text-shadow: 0 0 12px rgba(0, 255, 140, 0.8);
 }
 
 @media (max-width: 768px) {
@@ -149,5 +157,6 @@
 
   .mainContainer {
     padding: 2rem;
+    margin: 1rem;
   }
 }

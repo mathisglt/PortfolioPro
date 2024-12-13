@@ -9,103 +9,145 @@
   padding: 2rem;
   width: 100%; 
   margin: auto; 
-  background-color: #121212;
+  background: #0a0a0a;
   overflow: hidden;
 }
 
 .bubblesContainer {
   display: flex;
-  gap: 1rem; 
-  margin-top: 1.5rem; 
-}
-
-.bubble {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700; 
-  background: linear-gradient(135deg, #ff9a8b, #ffb5e2, #fff0b3, #ff9a8b); 
-  border: none;
-  color: #333;
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: center;
-  border-radius: 50%; 
-  width: 150px;
-  height: 150px;
-  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-  animation: float 6s ease-in-out infinite, gradientShift 6s ease infinite; 
-  background-size: 300% 300%;
-  transition: transform 0.3s ease;
 }
 
-.bubble:hover {
-  transform: scale(1.2);
-}
-
+.bubble,
 .subBubble {
-  font-family: 'Poppins', sans-serif; 
-  font-weight: 700; 
-  background: linear-gradient(135deg, #ff9a8b, #ffb5e2, #fff0b3, #ff9a8b); 
-  border: none;
-  color: #333;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  background: #151515;
+  color: #fff;
   font-size: 1.5rem;
   text-align: center;
-  border-radius: 50%;
-  width: 175px;
-  height: 175px;
+  width: 200px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  animation: float 6s ease-in-out infinite, gradientShift 6s ease infinite; 
-  background-size: 300% 300%; 
-  transition: transform 0.3s ease; 
+  position: relative;
+  border: 2px solid #00ff8c;
+  clip-path: polygon(
+    10% 0,
+    90% 0,
+    100% 10%,
+    100% 90%,
+    90% 100%,
+    10% 100%,
+    0 90%,
+    0 10%
+  );
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, box-shadow, border-color;
+  transform: translateZ(0);
+  text-shadow: 0 0 8px rgba(0, 255, 140, 0.5);
+  box-shadow: 
+    0 0 10px rgba(0, 255, 140, 0.2),
+    inset 0 0 10px rgba(0, 255, 140, 0.2);
 }
 
+.bubble:hover,
 .subBubble:hover {
-  transform: scale(1.1); 
+  transform: scale(1.03) translateY(-3px);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border-color: #00ff8c;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 140, 0.4),
+    inset 0 0 20px rgba(0, 255, 140, 0.4);
+  text-shadow: 0 0 12px rgba(0, 255, 140, 0.8);
+}
+
+.bubble::before,
+.subBubble::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #00ff8c;
+  z-index: -1;
+  clip-path: polygon(
+    10% 0,
+    90% 0,
+    100% 10%,
+    100% 90%,
+    90% 100%,
+    10% 100%,
+    0 90%,
+    0 10%
+  );
+  opacity: 0;
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
+}
+
+.bubble:hover::before,
+.subBubble:hover::before {
+  opacity: 0.1;
+}
+
+.disabled {
+  opacity: 0.7;
+  border-color: #ff6b00;
+  box-shadow: 
+    0 0 10px rgba(255, 107, 0, 0.2),
+    inset 0 0 10px rgba(255, 107, 0, 0.2);
+  text-shadow: 0 0 8px rgba(255, 107, 0, 0.5);
+  cursor: not-allowed;
+  color: #ff6b00;
+}
+
+.disabled:hover {
+  transform: none;
+  border-color: #ff6b00;
+  box-shadow: 
+    0 0 10px rgba(255, 107, 0, 0.2),
+    inset 0 0 10px rgba(255, 107, 0, 0.2);
+}
+
+.disabled::before {
+  background: #ff6b00;
+  opacity: 0.05;
+}
+
+.disabled:hover::before {
+  opacity: 0.1;
 }
 
 .backButton {
-  background-color: #333;
-  color: #fff;
+  background: transparent;
+  color: #00ff8c;
   font-size: 1rem;
-  font-weight: bold;
-  text-align: center;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid #00ff8c;
   cursor: pointer;
   margin-top: 20px;
-  transition: background-color 0.3s ease, transform 0.3s ease; 
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, background-color, box-shadow;
+  clip-path: polygon(
+    10% 0,
+    90% 0,
+    100% 30%,
+    100% 70%,
+    90% 100%,
+    10% 100%,
+    0 70%,
+    0 30%
+  );
 }
 
 .backButton:hover {
-  background-color: #555; 
-  transform: translateY(-2px);
-}
-
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  background: rgba(0, 255, 140, 0.1);
+  box-shadow: 0 0 15px rgba(0, 255, 140, 0.3);
 }
