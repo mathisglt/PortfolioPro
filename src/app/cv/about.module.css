@@ -215,7 +215,7 @@
   }
 }
 
-.githubLink {
+.githubLink, .downloadLink {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -239,7 +239,7 @@
   );
 }
 
-.githubLink:hover {
+.githubLink:hover, .downloadLink:hover {
   background: rgba(0, 255, 140, 0.1);
   box-shadow: 0 0 15px rgba(0, 255, 140, 0.4);
 }
@@ -247,5 +247,160 @@
 .githubLink span {
   font-size: 0.9rem;
   font-weight: 600;
+}
+
+.downloadLink span {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.downloadLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #151515;
+  color: #00ff8c;
+  text-decoration: none;
+  border: 1px solid #00ff8c;
+  box-shadow: 0 0 10px rgba(0, 255, 140, 0.2);
+  transition: all 0.2s ease;
+  clip-path: polygon(
+    10% 0,
+    90% 0,
+    100% 30%,
+    100% 70%,
+    90% 100%,
+    10% 100%,
+    0 70%,
+    0 30%
+  );
+}
+
+.downloadLink:hover {
+  background: rgba(0, 255, 140, 0.1);
+  box-shadow: 0 0 15px rgba(0, 255, 140, 0.4);
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.java {
+  background-color: #f44336;
+  color: white;
+  border: 1px solid #d32f2f;
+}
+
+.python {
+  background-color: #64b5f6;
+  color: black;
+  border: 1px solid #2196f3;
+}
+
+.scala {
+  background-color: #ff9800;
+  color: black;
+  border: 1px solid #f57c00;
+}
+
+.linux {
+  background-color: #ffeb3b;
+  color: black;
+  border: 1px solid #fbc02d;
+}
+
+.docker {
+  background-color: #00bcd4;
+  color: black;
+  border: 1px solid #0097a7;
+}
+
+.javascript {
+  background-color: #f7df1e;
+  color: black;
+  border: 1px solid #fbc02d;
+}
+
+.typescript {
+  background-color: #007acc;
+  color: white;
+  border: 1px solid #005b99;
+}
+
+.react {
+  background-color: #61dafb;
+  color: black;
+  border: 1px solid #00acc1;
+}
+
+.nextjs {
+  background-color: #ffffff;
+  color: black;
+  border: 1px solid #cccccc;
+}
+
+.angular {
+  background-color: #dd0031;
+  color: white;
+  border: 1px solid #c62828;
+}
+
+.vue {
+  background-color: #90ee90;
+  color: black;
+  border: 1px solid #388e3c;
+}
+
+.nodejs {
+  background-color: #90ee90;
+  color: black;
+  border: 1px solid #6d9e3b;
+}
+
+.c {
+  background-color: #ff69b4;
+  color: white;
+  border: 1px solid #ff1493;
+}
+
+.express {
+  background-color: #000000;
+  color: white;
+  border: 1px solid #333333;
+}
+
+.nestjs {
+  background-color: #e0234e;
+  color: white;
+  border: 1px solid #c2185b;
+}
+
+.git {
+  background-color: #f1502f;
+  color: white;
+  border: 1px solid #c62828;
+}
+
+.sql {
+  background-color: #f29111;
+  color: white;
+  border: 1px solid #e67e22;
+}
+
+.postgresql {
+  background-color: #336791;
+  color: white;
+  border: 1px solid #1e88e5;
+}
+
+.monetdb {
+  background-color: #0072b1;
+  color: white;
+  border: 1px solid #005b99;
 }
   

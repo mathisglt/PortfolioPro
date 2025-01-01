@@ -6,12 +6,12 @@ import { FaGithub } from 'react-icons/fa';
 const About = () => {
   const skills = {
     web: {
-      frontend: ['JavaScript', 'TypeScript','React', 'Next.js','Angular','Vue.js'],
-      backend: ['Node.js', 'Express', 'NestJS']
+      frontend: ['JavaScript', 'TypeScript', 'React', 'NextJs', 'Angular', 'Vue'],
+      backend: ['NodeJs', 'Express', 'NestJS']
     },
     software: {
       languages: ['Java', 'Python', 'Scala', 'C'],
-      tools: ['Git', 'SQL', 'Linux', 'Docker' ,'PostgreSQL','MonetDB']
+      tools: ['Git', 'SQL', 'Linux', 'Docker', 'PostgreSQL', 'MonetDB']
     }
   };
 
@@ -46,20 +46,31 @@ const About = () => {
       >
         <h2 className={styles.glitchText} data-text="Gaultier Mathis">Gaultier Mathis</h2>
         <div className={styles.subtitle}>Développeur Full Stack & Développeur Logiciel</div>
-        <motion.a 
-          href="https://github.com/mathisglt" 
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.githubLink}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.8 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <FaGithub size={24} />
-          <span>GitHub</span>
-        </motion.a>
+        <div className={styles.buttonContainer}>
+          <motion.a 
+            href="/gaultiermathiscv.pdf" 
+            download="Gaultier Mathis CV" 
+            className={styles.downloadLink}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.8 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Download CV
+          </motion.a>
+          <motion.a 
+            href="https://github.com/yourprofile" 
+            className={styles.githubLink}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.8 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <FaGithub /> GitHub
+          </motion.a>
+        </div>
       </motion.div>
 
       <div className={styles.mainContent}>
@@ -97,15 +108,15 @@ const About = () => {
         >
           <h2 className={styles.sectionTitle}>Compétences</h2>
           <div className={styles.skillsContainer}>
-            
-
             <div className={styles.skillCategory}>
               <h3 className={styles.categoryTitle}>Développement Logiciel</h3>
               <div className={styles.skillBox}>
                 <h4 className={styles.skillTitle}>Langages</h4>
                 <div className={styles.techStack}>
                   {skills.software.languages.map((tech) => (
-                    <div key={tech} className={styles.techItem}>{tech}</div>
+                    <div key={tech} className={`${styles.techItem} ${styles[tech.toLowerCase()]}`}>
+                      {tech}
+                    </div>
                   ))}
                 </div>
               </div>
@@ -113,7 +124,9 @@ const About = () => {
                 <h4 className={styles.skillTitle}>Outils</h4>
                 <div className={styles.techStack}>
                   {skills.software.tools.map((tech) => (
-                    <div key={tech} className={styles.techItem}>{tech}</div>
+                    <div key={tech} className={`${styles.techItem} ${styles[tech.toLowerCase()]}`}>
+                      {tech}
+                    </div>
                   ))}
                 </div>
               </div>
@@ -124,7 +137,9 @@ const About = () => {
                 <h4 className={styles.skillTitle}>Frontend</h4>
                 <div className={styles.techStack}>
                   {skills.web.frontend.map((tech) => (
-                    <div key={tech} className={styles.techItem}>{tech}</div>
+                    <div key={tech} className={`${styles.techItem} ${styles[tech.toLowerCase()]}`}>
+                      {tech}
+                    </div>
                   ))}
                 </div>
               </div>
@@ -132,7 +147,9 @@ const About = () => {
                 <h4 className={styles.skillTitle}>Backend</h4>
                 <div className={styles.techStack}>
                   {skills.web.backend.map((tech) => (
-                    <div key={tech} className={styles.techItem}>{tech}</div>
+                    <div key={tech} className={`${styles.techItem} ${styles[tech.toLowerCase()]}`}>
+                      {tech}
+                    </div>
                   ))}
                 </div>
               </div>
