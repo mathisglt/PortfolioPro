@@ -71,6 +71,12 @@ const About = () => {
             <FaGithub /> GitHub
           </motion.a>
         </div>
+
+        <div className={styles.jobSearchContainer}>
+          <p>
+            Je suis actuellement à la recherche d&apos;opportunités de stage et/ou d&apos;alternance dans le développement logiciel et web. Passionné par le développement, je suis enthousiaste à l&apos;idée de mettre mes compétences en pratique et de contribuer à des projets innovants. N&apos;hésitez pas à me contacter si vous avez des opportunités à me proposer !
+          </p>
+        </div>
       </motion.div>
 
       <div className={styles.mainContent}>

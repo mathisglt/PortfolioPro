@@ -403,4 +403,15 @@
   color: white;
   border: 1px solid #005b99;
 }
+
+.jobSearchContainer {
+  background: #1a1a1a;
+  border: 2px solid #00ff8c;
+  padding: 1rem;
+  margin-top: 1rem;
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 255, 140, 0.5);
+  border-radius: 8px;
+}
   
