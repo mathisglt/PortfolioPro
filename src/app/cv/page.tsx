@@ -60,7 +60,7 @@ const About = () => {
             Download CV
           </motion.a>
           <motion.a 
-            href="https://github.com/yourprofile" 
+            href="https://github.com/mathisglt" 
             className={styles.githubLink}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
